@@ -1,0 +1,2 @@
+class Lga < ApplicationRecord
+end

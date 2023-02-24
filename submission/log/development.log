@@ -1,0 +1,1174 @@
+  [1m[35m (383.1ms)[0m  [1m[35mCREATE DATABASE "landchecker_challenge_development" ENCODING = 'unicode'[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE DATABASE "landchecker_challenge_development" ENCODING = 'unicode'[0m
+  [1m[35m (1128.0ms)[0m  [1m[35mCREATE DATABASE "landchecker_challenge_test" ENCODING = 'unicode'[0m
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8223794220400473015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLgas (20230220120111)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8223794220400473015)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8223794220400473015)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLgas (20230220120111)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "lgas" ("id" bigserial primary key, "property_id" integer, "council_property_number" character varying, "full_address" character varying, "latitude" float, "longitude" float, "postcode" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230220120111"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-20 13:58:10.502088"], ["updated_at", "2023-02-20 13:58:10.502088"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8223794220400473015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "landchecker_challenge_development" ENCODING = 'unicode'[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE DATABASE "landchecker_challenge_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "lgas" CASCADE[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "lgas" ("id" bigserial primary key, "property_id" integer, "council_property_number" character varying, "full_address" character varying, "latitude" float, "longitude" float, "postcode" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "2bd2158c8a70717b6db179ba815969769c4e2219"], ["created_at", "2023-02-20 13:58:20.326703"], ["updated_at", "2023-02-20 13:58:20.326703"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "lgas" CASCADE[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "lgas" ("id" bigserial primary key, "property_id" integer, "council_property_number" character varying, "full_address" character varying, "latitude" float, "longitude" float, "postcode" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230220120111)[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-20 13:58:20.450702"], ["updated_at", "2023-02-20 13:58:20.450702"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-02-20 13:58:20.457265"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "2bd2158c8a70717b6db179ba815969769c4e2219"], ["created_at", "2023-02-20 13:58:20.461807"], ["updated_at", "2023-02-20 13:58:20.461807"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/lgas" for ::1 at 2023-02-21 15:30:41 +1100
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+Completed 404 Not Found in 12ms (ActiveRecord: 5.2ms | Allocations: 1361)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lga without an ID):
+  
+app/controllers/api/v1/lgas_controller.rb:47:in `find_lga'
+Started GET "/favicon.ico" for ::1 at 2023-02-21 15:30:42 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/lgas" for ::1 at 2023-02-21 15:31:51 +1100
+Processing by Api::V1::LgasController#index as HTML
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms | Allocations: 147)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lga without an ID):
+  
+app/controllers/api/v1/lgas_controller.rb:47:in `find_lga'
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-21 15:31:55 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (1.2ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:47:in `find_lga'
+Completed 404 Not Found in 11ms (ActiveRecord: 6.4ms | Allocations: 1882)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lga with 'id'=1):
+  
+app/controllers/api/v1/lgas_controller.rb:47:in `find_lga'
+Started GET "/api/v1/lgas" for ::1 at 2023-02-21 15:32:19 +1100
+Processing by Api::V1::LgasController#index as HTML
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 118)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lga without an ID):
+  
+app/controllers/api/v1/lgas_controller.rb:47:in `find_lga'
+Started GET "/api/v1/lgas/index" for ::1 at 2023-02-21 15:32:32 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:47:in `find_lga'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms | Allocations: 507)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lga with 'id'=index):
+  
+app/controllers/api/v1/lgas_controller.rb:47:in `find_lga'
+Started GET "/api/v1/lgas" for ::1 at 2023-02-21 15:52:33 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 3813)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (3.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1], ["council_property_number", "12312"], ["full_address", "address"], ["latitude", 1.0], ["longitude", 2.0], ["postcode", "1000"], ["created_at", "2023-02-21 04:55:57.806353"], ["updated_at", "2023-02-21 04:55:57.806353"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/lgas" for ::1 at 2023-02-21 15:56:10 +1100
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 4.2ms | Allocations: 5859)
+
+
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-21 15:59:24 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (1.0ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+Completed 200 OK in 111ms (Views: 1.1ms | ActiveRecord: 1.3ms | Allocations: 4763)
+
+
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-21 15:59:27 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (1.2ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.2ms | Allocations: 583)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lga with 'id'=2):
+  
+app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+app/controllers/api/v1/lgas_controller.rb:10:in `show'
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-21 16:04:11 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 500 Internal Server Error in 13ms (Views: 0.7ms | ActiveRecord: 5.1ms | Allocations: 2322)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/lgas_controller.rb:11:in `show'
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-21 16:25:58 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (0.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 500 Internal Server Error in 213ms (Views: 0.3ms | ActiveRecord: 6.5ms | Allocations: 4699)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/lgas_controller.rb:11:in `show'
+Started GET "/api/v1/lgas" for ::1 at 2023-02-21 16:29:08 +1100
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.3ms | Allocations: 4258)
+
+
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-21 16:29:12 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 500 Internal Server Error in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 593)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/lgas_controller.rb:11:in `show'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8223794220400473015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWidgets (20230221151416)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE "widgets" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230221151416"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8223794220400473015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (1.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 6.5ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 4.0ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 3.8ms | Allocations: 6801)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (2.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 9.1ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.9ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 4.9ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 4.0ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 4.8ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 4.3ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 4.4ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 4.2ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 4.1ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (4.8ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-23 17:21:43.132219"], ["updated_at", "2023-02-23 17:21:43.132219"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (1.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 8.1ms | ActiveRecord: 13.2ms | Allocations: 6800)
+
+
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 11:22:39 +1100
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (2.0ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 40ms (Views: 11.0ms | ActiveRecord: 17.5ms | Allocations: 9014)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-02-24 11:22:40 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/lgas/new" for ::1 at 2023-02-24 11:23:02 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"new"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 714)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x0000023c84699278>
+Did you mean?  try):
+  
+app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+app/controllers/api/v1/lgas_controller.rb:10:in `show'
+Started GET "/api/v1/lgas/new" for ::1 at 2023-02-24 11:25:44 +1100
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 11:25:44 +1100
+Started GET "/api/v1/lgas/new" for ::1 at 2023-02-24 11:25:44 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"new"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 630)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x0000023c84a907c8>
+Did you mean?  try):
+  
+app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+app/controllers/api/v1/lgas_controller.rb:10:in `show'
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 601)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x0000023c857f8960>
+Did you mean?  try):
+  
+app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+app/controllers/api/v1/lgas_controller.rb:10:in `show'
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"new"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 604)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x0000023c86026a38>
+Did you mean?  try):
+  
+app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+app/controllers/api/v1/lgas_controller.rb:10:in `show'
+Started GET "/api/v1/lgas/new" for ::1 at 2023-02-24 11:26:47 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"new"}
+Completed   in 43185ms (ActiveRecord: 0.0ms | Allocations: 74597)
+
+
+Started GET "/api/v1/lgas/" for ::1 at 2023-02-24 12:29:29 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (1.1ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 73ms (Views: 62.8ms | ActiveRecord: 5.3ms | Allocations: 9016)
+
+
+Started GET "/api/v1/lgas/new" for ::1 at 2023-02-24 12:29:45 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mLga Load (0.2ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 200 OK in 32124ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 72378)
+
+
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 12:30:27 +1100
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 3.9ms | Allocations: 6223)
+
+
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 13:03:04 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (1.1ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 5.6ms | Allocations: 9687)
+
+
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-24 13:03:19 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 562)
+
+
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 13:12:45 +1100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2917)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1+)):
+  
+app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+app/controllers/api/v1/lgas_controller.rb:10:in `show'
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 13:14:12 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (6.9ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE (1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 6.9ms | Allocations: 3781)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "lgas".* FROM "lgas" WHERE (1) LIMIT $1
+                                           ^
+):
+  
+app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+app/controllers/api/v1/lgas_controller.rb:10:in `show'
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 13:15:56 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (0.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+Completed 200 OK in 23ms (Views: 4.0ms | ActiveRecord: 4.9ms | Allocations: 7085)
+
+
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-24 13:16:00 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 556)
+
+
+Started GET "/api/v1/lgas/sdjsdhaf" for ::1 at 2023-02-24 13:16:04 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"sdjsdhaf"}
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:51:in `find_lga'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 524)
+
+
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 13:20:41 +1100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `respond_to' for ApplicationController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api/v1/lgas_controller.rb:3:in `<main>'
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:24:16 +1100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (C:/Users/Stefan/Desktop/repos/landchecker-coding-challenge/rest-api-guide/app/controllers/api/v1/lgas_controller.rb:57: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/lgas_controller.rb:57: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/lgas_controller.rb:57: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:24:38 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (C:/Users/Stefan/Desktop/repos/landchecker-coding-challenge/rest-api-guide/app/controllers/api/v1/lgas_controller.rb:58: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/lgas_controller.rb:58: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/api/v1/lgas_controller.rb:58: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:25:09 +1100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (0.8ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:52:in `find_lga'
+Completed 500 Internal Server Error in 23ms (Views: 0.3ms | ActiveRecord: 5.1ms | Allocations: 9557)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/lgas_controller.rb:11:in `show'
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:41:29 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (0.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+Filter chain halted as :find_lga rendered or redirected
+Completed 400 Bad Request in 18ms (Views: 0.3ms | ActiveRecord: 4.4ms | Allocations: 7345)
+
+
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:42:46 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (0.8ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+Filter chain halted as :find_lga rendered or redirected
+Completed 400 Bad Request in 19ms (Views: 0.5ms | ActiveRecord: 4.7ms | Allocations: 7360)
+
+
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:46:47 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1347)
+
+
+  
+NoMethodError (undefined method `is_integer?' for "1":String):
+  
+app/controllers/api/v1/lgas_controller.rb:53:in `find_lga'
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:49:30 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (0.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+  [1m[36mCACHE Lga Load (0.0ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+Completed 200 OK in 53ms (Views: 6.6ms | ActiveRecord: 4.7ms | Allocations: 10185)
+
+
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-24 14:49:34 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (1.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+Completed 404 Not Found in 10ms (ActiveRecord: 1.5ms | Allocations: 595)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Lga with 'id'=2):
+  
+app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-24 14:50:53 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (0.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+Filter chain halted as :find_lga rendered or redirected
+Completed 404 Not Found in 16ms (Views: 1.0ms | ActiveRecord: 4.4ms | Allocations: 3266)
+
+
+Started GET "/api/v1/lgas/dkulfasdkgfd" for ::1 at 2023-02-24 14:51:04 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"dkulfasdkgfd"}
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+Completed 500 Internal Server Error in 8ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 710)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/lgas_controller.rb:57:in `rescue in find_lga'
+app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+Started GET "/api/v1/lgas/dkulfasdkgfd" for ::1 at 2023-02-24 14:52:37 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"dkulfasdkgfd"}
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+Completed 500 Internal Server Error in 11ms (Views: 0.3ms | ActiveRecord: 4.5ms | Allocations: 3353)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/lgas_controller.rb:57:in `rescue in find_lga'
+app/controllers/api/v1/lgas_controller.rb:54:in `find_lga'
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 14:58:25 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 24ms (Views: 12.7ms | ActiveRecord: 5.3ms | Allocations: 9049)
+
+
+Started GET "/api/v1/lgas/dsfsdfdf" for ::1 at 2023-02-24 14:58:30 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"dsfsdfdf"}
+Filter chain halted as :find_lga rendered or redirected
+Completed 400 Bad Request in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 196)
+
+
+Started GET "/api/v1/lgas/1" for ::1 at 2023-02-24 14:58:45 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:56:in `find_lga'
+  [1m[36mCACHE Lga Load (0.0ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:56:in `find_lga'
+Completed 200 OK in 23ms (Views: 4.0ms | ActiveRecord: 3.9ms | Allocations: 6813)
+
+
+Started GET "/api/v1/lgas/2" for ::1 at 2023-02-24 14:58:47 +1100
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLga Load (2.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:56:in `find_lga'
+Filter chain halted as :find_lga rendered or redirected
+Completed 404 Not Found in 9ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 605)
+
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 4.2ms | Allocations: 6835)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 4.0ms | Allocations: 6835)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (5.7ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:04:21.538404"], ["updated_at", "2023-02-24 04:04:21.538404"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 4.8ms | Allocations: 6836)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:04:44.427201"], ["updated_at", "2023-02-24 04:04:44.427201"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:04:44.431686"], ["updated_at", "2023-02-24 04:04:44.431686"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 4.3ms | Allocations: 6835)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:28:51.872932"], ["updated_at", "2023-02-24 04:28:51.872932"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:28:51.877265"], ["updated_at", "2023-02-24 04:28:51.877265"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 4.0ms | Allocations: 6835)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.7ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:31:36.900761"], ["updated_at", "2023-02-24 04:31:36.900761"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.5ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:31:36.905040"], ["updated_at", "2023-02-24 04:31:36.905040"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 4.0ms | Allocations: 6835)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:32:36.781712"], ["updated_at", "2023-02-24 04:32:36.781712"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 4.3ms | Allocations: 6835)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.8ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:32:46.260749"], ["updated_at", "2023-02-24 04:32:46.260749"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:32:46.265505"], ["updated_at", "2023-02-24 04:32:46.265505"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 4.0ms | Allocations: 6835)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:39:16.041502"], ["updated_at", "2023-02-24 04:39:16.041502"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:39:16.045635"], ["updated_at", "2023-02-24 04:39:16.045635"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 4.0ms | Allocations: 6836)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:39:50.947165"], ["updated_at", "2023-02-24 04:39:50.947165"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:39:50.951460"], ["updated_at", "2023-02-24 04:39:50.951460"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 4.2ms | Allocations: 6837)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:41:54.508280"], ["updated_at", "2023-02-24 04:41:54.508280"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:41:54.512455"], ["updated_at", "2023-02-24 04:41:54.512455"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 3.9ms | Allocations: 6837)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (1.5ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:42:39.682273"], ["updated_at", "2023-02-24 04:42:39.682273"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:42:39.687423"], ["updated_at", "2023-02-24 04:42:39.687423"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 4.4ms | Allocations: 6837)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:43:34.891968"], ["updated_at", "2023-02-24 04:43:34.891968"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (1.2ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:43:34.896958"], ["updated_at", "2023-02-24 04:43:34.896958"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 4.0ms | Allocations: 6837)
+
+
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (1.3ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:45:52.697181"], ["updated_at", "2023-02-24 04:45:52.697181"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:45:52.702100"], ["updated_at", "2023-02-24 04:45:52.702100"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:56:in `find_lga'
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:56:in `find_lga'
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.1ms | Allocations: 1385)
+
+
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 4.1ms | Allocations: 6838)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.7ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:46:47.945411"], ["updated_at", "2023-02-24 04:46:47.945411"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:46:47.949794"], ["updated_at", "2023-02-24 04:46:47.949794"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:56:in `find_lga'
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:56:in `find_lga'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 1385)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 3.9ms | Allocations: 6837)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:51:49.168431"], ["updated_at", "2023-02-24 04:51:49.168431"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:51:49.172604"], ["updated_at", "2023-02-24 04:51:49.172604"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.2ms | Allocations: 1385)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 3.9ms | Allocations: 6838)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:51:57.413199"], ["updated_at", "2023-02-24 04:51:57.413199"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2023-02-24 04:51:57.417582"], ["updated_at", "2023-02-24 04:51:57.417582"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 1391)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"10000"}
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" WHERE "lgas"."id" = $1 LIMIT $2[0m  [["id", 10000], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:55:in `find_lga'
+Filter chain halted as :find_lga rendered or redirected
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 620)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::LgasController#show as HTML
+  Parameters: {"id"=>"blah"}
+Filter chain halted as :find_lga rendered or redirected
+Completed 400 Bad Request in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 182)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (2.2ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:56:40.767379"], ["updated_at", "2023-02-24 04:56:40.767379"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:56:52.097444"], ["updated_at", "2023-02-24 04:56:52.097444"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:56:52.995118"], ["updated_at", "2023-02-24 04:56:52.995118"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 04:56:53.737410"], ["updated_at", "2023-02-24 04:56:53.737410"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:03:23 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 42.1ms | ActiveRecord: 4.2ms | Allocations: 9626)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.8ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:52.347919"], ["updated_at", "2023-02-24 05:04:52.347919"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:53.074015"], ["updated_at", "2023-02-24 05:04:53.074015"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:53.666542"], ["updated_at", "2023-02-24 05:04:53.666542"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:54.214959"], ["updated_at", "2023-02-24 05:04:54.214959"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.5ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:54.622201"], ["updated_at", "2023-02-24 05:04:54.622201"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:55.104989"], ["updated_at", "2023-02-24 05:04:55.104989"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.6ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:55.511046"], ["updated_at", "2023-02-24 05:04:55.511046"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.5ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:55.889057"], ["updated_at", "2023-02-24 05:04:55.889057"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:56.261402"], ["updated_at", "2023-02-24 05:04:56.261402"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:56.651674"], ["updated_at", "2023-02-24 05:04:56.651674"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.3ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:56.995705"], ["updated_at", "2023-02-24 05:04:56.995705"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:57.339045"], ["updated_at", "2023-02-24 05:04:57.339045"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.7ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:57.684313"], ["updated_at", "2023-02-24 05:04:57.684313"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLga Create (0.4ms)[0m  [1m[32mINSERT INTO "lgas" ("property_id", "council_property_number", "full_address", "latitude", "longitude", "postcode", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["property_id", 1623061], ["council_property_number", "2387900700"], ["full_address", "15 HEROES AVENUE EMERALD 3782"], ["latitude", -37.9325840055048], ["longitude", 145.444291599465], ["postcode", "3782"], ["created_at", "2023-02-24 05:04:58.666604"], ["updated_at", "2023-02-24 05:04:58.666604"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:05:27 +1100
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.4ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 3421)
+
+
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:05:36 +1100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (1.1ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 200 OK in 73ms (Views: 60.8ms | ActiveRecord: 4.6ms | Allocations: 11624)
+
+
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:13:36 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:9:in `index'
+Completed 200 OK in 80ms (Views: 68.7ms | ActiveRecord: 5.4ms | Allocations: 11664)
+
+
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:15:48 +1100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.7ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:9:in `index'
+Completed 200 OK in 73ms (Views: 62.3ms | ActiveRecord: 5.0ms | Allocations: 11664)
+
+
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:15:49 +1100
+Processing by Api::V1::LgasController#index as HTML
+  [1m[36mLga Load (0.5ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:9:in `index'
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.5ms | Allocations: 3450)
+
+
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:19:21 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2843)
+
+
+  
+NoMethodError (undefined method `count' for nil:NilClass):
+  
+app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:20:01 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+  [1m[36mLga Load (0.3ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:9:in `index'
+Completed 200 OK in 81ms (Views: 62.0ms | ActiveRecord: 6.2ms | Allocations: 10573)
+
+
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:23:11 +1100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (C:/Users/Stefan/Desktop/repos/landchecker-coding-challenge/rest-api-guide/app/controllers/api/v1/lgas_controller.rb:9: unexpected ...):
+  
+app/controllers/api/v1/lgas_controller.rb:9: unexpected ...
+app/controllers/api/v1/lgas_controller.rb:9: unexpected ...
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:24:11 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.9ms | Allocations: 6336)
+
+
+  
+NoMethodError (undefined method `pagy_metadata' for #<Api::V1::LgasController:0x00000000006630>
+Did you mean?  pagy_headers):
+  
+app/controllers/api/v1/lgas_controller.rb:9:in `index'
+Started GET "/api/v1/lgas" for ::1 at 2023-02-24 16:29:27 +1100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::LgasController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lgas"[0m
+  ↳ app/controllers/api/v1/lgas_controller.rb:8:in `index'
+  [1m[36mLga Load (0.6ms)[0m  [1m[34mSELECT "lgas".* FROM "lgas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/lgas_controller.rb:9:in `index'
+Completed 200 OK in 72ms (Views: 57.4ms | ActiveRecord: 5.5ms | Allocations: 11053)
+
+
