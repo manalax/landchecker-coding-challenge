@@ -1,6 +1,9 @@
 # landchecker-coding-challenge
 A submission for Landchecker's backend coding challenge.
 
+#Overview
+This submission contains a framework for a REST API written in Ruby. The controller can perform GET and POST requests on LGA objects, performing a simple check on a given id to determine its validity. For index requests, the results are paginated via the pagy gem (https://github.com/ddnexus/pagy), and the results are saved to a Postgres database.
+
 # Usage
 Ensure both ruby and rails are installed locally.
 Run `bundle install` prior to running the app
@@ -16,3 +19,5 @@ To access a specific LGA, enter `http://localhost:3000/api/v1/lgas/id`, where id
 
 # Specs
 To run the specs for the LGA controller, enter `rspec spec\controllers\lgas_controller_spec.rb` in the console.
+
+#D
