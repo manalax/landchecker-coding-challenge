@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require '../rest-api-guide/app/controllers/api/v1/lgas_controller'
+require '../submission/app/controllers/api/v1/lgas_controller'
 
 RSpec.describe Api::V1::LgasController, type: :controller do
   let(:valid_lga) { create(:lga) }

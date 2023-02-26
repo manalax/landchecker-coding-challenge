@@ -11,7 +11,7 @@ class Api::V1::LgasController < ApplicationController
 
   def show
     find_lga
-    render json: @lgas
+    render json: @lga
   end
 
   def create
