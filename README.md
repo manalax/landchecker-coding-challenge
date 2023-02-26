@@ -1,7 +1,7 @@
 # landchecker-coding-challenge
 A submission for Landchecker's backend coding challenge.
 
-#Overview
+# Overview
 This submission contains a framework for a REST API written in Ruby. The controller can perform GET and POST requests on LGA objects, performing a simple check on a given id to determine its validity. For index requests, the results are paginated via the pagy gem (https://github.com/ddnexus/pagy), and the results are saved to a Postgres database.
 
 # Usage
