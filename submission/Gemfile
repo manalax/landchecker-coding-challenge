@@ -42,3 +42,4 @@ gem 'factory_bot_rails', group: [:development, :test]
 gem 'pry', '~> 0.13.1'
 gem 'rails-controller-testing'
 gem 'pagy'
+gem 'figaro'
