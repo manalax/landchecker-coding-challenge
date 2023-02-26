@@ -20,4 +20,8 @@ To access a specific LGA, enter `http://localhost:3000/api/v1/lgas/id`, where id
 # Specs
 To run the specs for the LGA controller, enter `rspec spec\controllers\lgas_controller_spec.rb` in the console.
 
-#D
+# Demo
+
+https://user-images.githubusercontent.com/23524638/221427101-01096d8a-f435-47d9-b854-e8ef59bef2d8.mp4
+
+
